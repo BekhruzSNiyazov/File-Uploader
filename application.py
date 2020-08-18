@@ -39,8 +39,8 @@ def uupload():
     if "file" not in request.files:
         print("File upload error")
         return redirect("/")
-    image = request.files["file"]
-    storage.child("/images/" + image.filename).put(image)
+    file = request.files["file"]
+    storage.child("/" + file.filename).put(file)
     return redirect("/")
 
 if __name__ == "__main__":
